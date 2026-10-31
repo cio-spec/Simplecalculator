@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function</title>
+  </head>
+  <body>
+    <button type = "button" onclick="sayhello()">Click</button>
+    <form>
+      <label>Fahrenheit</label><br>
+      <input type="number" id="f" placeholder="enter the temperature"><br>
+      <button type="button" onclick="toCelcius()">Konversi</button><br>
+      <label>Celcius :</label>
+      <h1 id="suhuKonversi">0</h1>   
+      
+      <label>Number 1</label><br>
+      <input type="number" id="number1" placeholder="enter the number"><br>
+      <label>Number 2</label><br>
+      <input type="number" id="number2" placeholder="enter the number"><br>
+      <button type="button" onclick="tambah()">+</button>
+      <button type="button" onclick="kurang()">-</button>
+      <button type="button" onclick="kali()">x</button>
+      <button type="button" onclick="bagi()">:</button><br>
+      <label>Result :</label>
+      <h1 id="hasilHitung">0</h1>   
+    </form>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+  <script>
+    function sayhello(){
+      return alert("Hello World");
+    }
+
+    function toCelcius(){
+      let suhuFahrenheit = document.getElementById("f").value;
+      let konversi = (5/9) * (suhuFahrenheit-32);
+      return document.getElementById("suhuKonversi").innerHTML= konversi.toFixed(2);
+    }
+
+    function tambah() {
+      let angka1 = document.getElementById("number1").value;
+      let angka2 = document.getElementById("number2").value;
+      let hasil = (angka1 * 1) + (angka2 * 1); 
+      return document.getElementById("hasilHitung").innerHTML = hasil;
+    }
+
+    function kurang() {
+      let angka1 = document.getElementById("number1").value;
+      let angka2 = document.getElementById("number2").value;
+      let hasil = angka1 - angka2;
+      return document.getElementById("hasilHitung").innerHTML = hasil;
+    }
+
+    function kali() {
+      let angka1 = document.getElementById("number1").value;
+      let angka2 = document.getElementById("number2").value;
+      let hasil = angka1 * angka2;
+      return document.getElementById("hasilHitung").innerHTML = hasil;
+    }
+
+    function bagi() {
+      let angka1 = document.getElementById("number1").value;
+      let angka2 = document.getElementById("number2").value;
+      let hasil = angka1 / angka2;
+      return document.getElementById("hasilHitung").innerHTML = hasil;
+    }
+</script>
+</html>
